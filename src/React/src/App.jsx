@@ -10,7 +10,7 @@ export default function App() {
     <div className = "appDiv">
       <BrowserRouter>
         <nav className = "navLink">
-          <ul>
+          <ul className = "navbar">
             <li><NavLink to = "/">Home</NavLink></li>
             <li><NavLink to = "/player">Player</NavLink></li>
           </ul>

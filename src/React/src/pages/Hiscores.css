@@ -1,0 +1,65 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  box-sizing: border-box;
+  max-width: calc(33.33% - 20px);
+}
+
+.rankingTable{
+  width: 100%;
+}
+
+.middle-column {
+  flex: 1;
+  box-sizing: border-box;
+  max-width: calc(33.33% - 20px);
+  background-color: #3E3629;
+  color:rgb(237, 196, 90)
+}
+.middle-column:hover{
+  cursor: pointer;
+}
+
+.button {
+  background-color: #3E3629;
+  color: rgb(237, 196, 90);
+  text-shadow: 1px black;
+  text-align: center;
+  width: 10em;
+  height: 3em;
+  box-shadow: 5px 5px 0px 0px black;
+  border-radius: 35px;
+  margin: 0 5px;
+}
+
+.button:hover {
+  background-color: lightblue;
+  cursor: pointer;
+  color: black;
+}
+
+.button:active {
+  background-color: goldenrod;
+}
+
+/* .left-column {
+  border: 2.5px solid black;
+} */
+
+.ulSkills {
+  margin: 0;
+  padding: 0;
+  column-count: 2;
+  list-style-type: none;
+  max-width: calc(2 * 10em + 20px);
+}
+
+.ulSkills li {
+  margin-bottom: 5px;
+  break-inside: avoid-column;
+}
