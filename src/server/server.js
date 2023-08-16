@@ -32,6 +32,19 @@ app.get("/hiscores/:skill", (req, res) => {
     });
 });
 
+app.get("/player/:rsn", (req, res) => {
+  console.log(req.params.rsn);
+  hiscores
+    .getStats(req.params.rsn)
+    .then((response) => {
+      console.log(response);
+      res.send(response)
+    })
+    .catch((err) => {
+      res.status(404).send({ status: 404, error: err });
+    });
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
