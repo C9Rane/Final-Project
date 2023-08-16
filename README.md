@@ -4,6 +4,9 @@ Final Project Idea:
 -Using Runescape API to access user data and React as the basis to build the page.
 -Links: https://secure.runescape.com/m=hiscore_oldschool/overall
 https://runescape.wiki/w/Application_programming_interface#Hiscores
+uses osrs-json-hiscores as a wrapper to return json from the fetch request.
+
+To Run: from the server, open the console and "npm run dev"
 
 # Getting Started with Create React App
 

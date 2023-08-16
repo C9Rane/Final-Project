@@ -1,60 +1,50 @@
 import React, { useState } from "react";
+import { BrowserRouter, NavLink, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
+import { Hiscores, Player } from "./pages";
+import "./index.css"
+
 
 export default function App() {
-  const [skill, setSkill] = useState('');
-  const [hiscoreData, setHiscoreData] = useState(null);
+  return(
+    <div className = "appDiv">
+      <BrowserRouter>
+        <nav className = "navLink">
+          <ul>
+            <li><NavLink to = "/">Home</NavLink></li>
+            <li><NavLink to = "/player">Player</NavLink></li>
+          </ul>
+        </nav>
+        <SearchPlayer />
+        <Routes>
+          <Route path ="/" element={<Hiscores />} />
+          <Route path="/player/:rsn" element={<Player />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
 
-  const fetchHiscores = (event) => {
-    console.log("something");
+function SearchPlayer() {
+  const [rsn, setRsn] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:5000/hiscores/${skill}`)
-      .then(response => response.json())
-      .then(fetchedData => {
-        setHiscoreData(fetchedData);       
-        console.log(fetchedData)
-      })
-      .catch(error => console.error('Error:', error));
+    if (rsn.trim()) { // Checks if input is not just white spaces.
+      navigate(`/player/${rsn}`);
+    }
   };
 
   return (
-    <div className="App">
-      <form onSubmit={e => e.preventDefault()}>
-        <input
-          type="text"
-          placeholder="Enter Skill"
-          value={skill}
-          onChange={e => setSkill(e.target.value)}
-        />
-        <button type="button" onClick={fetchHiscores}>Fetch HiScores</button>
-      </form>
-  
-      {/* Display the skills table */}
-      {hiscoreData && (
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Rank</th>
-              <th>Level</th>
-              <th>XP</th>
-              <th>Is Dead?</th>
-            </tr>
-          </thead>
-          <tbody className="skill-table">
-            {hiscoreData.map((player, index) => (
-              <tr key={index}>
-                <td>{player.name}</td>
-                <td>{player.rank}</td>
-                <td>{player.level}</td>
-                <td>{player.xp}</td>
-                <td>{player.dead ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
+    <form className = "playersearch" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Enter Player Name"
+        value={rsn}
+        onChange={e => setRsn(e.target.value)}
+      />
+      <button className = "searchBtn" type="submit">Fetch Player Stats</button>
+    </form>
   );
-  
 }
