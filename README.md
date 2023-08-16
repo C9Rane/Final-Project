@@ -6,9 +6,9 @@ Final Project Idea:
 https://runescape.wiki/w/Application_programming_interface#Hiscores
 uses osrs-json-hiscores as a wrapper to return json from the fetch request.
 
-To Run: from the server, open the console and "npm run dev"
+# To Run: from the server, open the console and "npm run dev"
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
