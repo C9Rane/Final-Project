@@ -70,7 +70,7 @@ export default function Hiscores(){
                   <th>Is Dead?</th>
                 </tr>
               </thead>
-              <tbody className="skill-table">
+              <tbody>
                 {hiscoreData.map((player, index) => (
                   <tr key={index} 
                   onClick={() => navigation(`/player/${player.name}`)}>
@@ -87,6 +87,12 @@ export default function Hiscores(){
         </div>      
         <div className="right-column">
           {/* Empty space for now */}
+          <table className = "info">
+            <thead>
+              <h3>Info</h3>
+              <p></p>
+            </thead>
+          </table>
         </div>
       </div>
     </div>

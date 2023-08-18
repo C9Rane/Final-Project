@@ -9,10 +9,9 @@ export default function App() {
   return(
     <div className = "appDiv">
       <BrowserRouter>
-        <nav className = "navLink">
+        <nav >
           <ul className = "navbar">
-            <li><NavLink to = "/">Home</NavLink></li>
-            <li><NavLink to = "/player">Player</NavLink></li>
+            <li className = "navLink"><NavLink to = "/"><strong>Home</strong></NavLink></li>
           </ul>
         </nav>
         <SearchPlayer />

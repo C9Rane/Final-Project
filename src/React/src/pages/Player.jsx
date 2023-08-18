@@ -17,10 +17,10 @@ export default function Player() {
   }, [rsn]);
 
   return (
-    <div>
-      <h2>{rsn} Hiscores</h2>
+    <div className="skill-table">
+      <h2 className = "playername">{rsn} Hiscores</h2>
       {playerStats.main && (
-        <table border="1">
+        <table className = "middle-column rankingTable" border="1">
           <thead>
             <tr>
               <th>Skill</th>
@@ -29,7 +29,7 @@ export default function Player() {
               <th>XP</th>
             </tr>
           </thead>
-          <tbody className="skill-table">
+          <tbody>
             {Object.entries(playerStats.main.skills).map(([skill, data], index) => (
               <tr key={index}>
                 <td>{skill}</td>

@@ -4,10 +4,25 @@
   gap: 20px;
 }
 
-.left-column, .right-column {
+.left-column {
   flex: 1;
   box-sizing: border-box;
   max-width: calc(33.33% - 20px);
+  padding-left: 10vw;
+  padding-top: 3vh;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.right-column {
+  flex: 1;
+  box-sizing: content-box;
+  max-width: calc(33.33% - 25px);
+  border: 1px solid black;
+  background-image: url(./Inventory.png);
+  background-size: contain;
+  background-attachment: local;
+  box-shadow: 5px 5px 0px 0px black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .rankingTable{
@@ -19,8 +34,11 @@
   box-sizing: border-box;
   max-width: calc(33.33% - 20px);
   background-color: #3E3629;
-  color:rgb(237, 196, 90)
+  color:rgb(237, 196, 90);
+  box-shadow: 5px 5px 0px 0px black;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6); 
 }
+
 .middle-column:hover{
   cursor: pointer;
 }
@@ -47,9 +65,6 @@
   background-color: goldenrod;
 }
 
-/* .left-column {
-  border: 2.5px solid black;
-} */
 
 .ulSkills {
   margin: 0;
@@ -62,4 +77,30 @@
 .ulSkills li {
   margin-bottom: 5px;
   break-inside: avoid-column;
+}
+
+.skill-table{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+.playername{
+  color: rgb(255, 194, 41);
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 25px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6); 
+}
+
+.playername:hover{
+  color: #b83214;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  cursor: crosshair;
+}
+
+.info{
+  padding-left: 20px;
+  color: goldenrod;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
